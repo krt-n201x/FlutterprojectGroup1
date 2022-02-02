@@ -1,7 +1,7 @@
 [
     {
         "roomNum": "101",
-        "peopleNum": "1",
+        "peopleNum": "2",
         "price": "3,500"
     },
     {
@@ -21,46 +21,16 @@
     },
     {
         "roomNum": "105",
-        "peopleNum": "1",
+        "peopleNum": "2",
         "price": "3,500"
     },
     {
         "roomNum": "106",
         "peopleNum": "1",
-        "price": "3,500"
+        "price": "4,500"
     },
     {
         "roomNum": "107",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "108",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "109",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "110",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "111",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "112",
-        "peopleNum": "1",
-        "price": "3,500"
-    },
-    {
-        "roomNum": "113",
         "peopleNum": "1",
         "price": "3,500"
     }

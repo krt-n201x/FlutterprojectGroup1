@@ -31,33 +31,74 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          backgroundColor: Colors.deepPurple[400],
+          title: Text(widget.title,
+              style: TextStyle(
+                fontSize: 32,
+              )),
+          toolbarHeight: 70,
+          centerTitle: true,
         ),
         body: Container(
             padding: const EdgeInsets.all(15),
             child: ScrollConfiguration(
-              behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+              behavior:
+                  ScrollConfiguration.of(context).copyWith(scrollbars: false),
               child: FutureBuilder(
                 builder: (context, snapshot) {
                   var data = json.decode(snapshot.data.toString());
+
                   return ListView.builder(
-                    itemCount: data.length,
                     itemBuilder: (BuildContext context, int index) {
                       return RoomCard(data[index]['roomNum'],
                           data[index]['peopleNum'], data[index]['price']);
                     },
-                    
+                    itemCount: data.length,
                   );
                 },
-                future:
-                    DefaultAssetBundle.of(context).loadString('assets/data.json'),
+                future: DefaultAssetBundle.of(context)
+                    .loadString('assets/data.json'),
               ),
             )),
+        bottomNavigationBar: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i) => setState(() => _currentIndex = i),
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.deepPurple[400],
+            ),
+
+            /// Likes
+            SalomonBottomBarItem(
+              icon: Icon(Icons.favorite_border),
+              title: Text("Likes"),
+              selectedColor: Colors.pink,
+            ),
+
+            /// Search
+            SalomonBottomBarItem(
+              icon: Icon(Icons.search),
+              title: Text("Search"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Profile
+            SalomonBottomBarItem(
+              icon: Icon(Icons.person),
+              title: Text("Profile"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -65,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Widget RoomCard(String roomNum, String peopleNum, String price) {
   return Container(
-    margin: EdgeInsets.only(top: 20),
+    margin: EdgeInsets.only(top: 8),
     padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
     height: 91,
     child: Container(
@@ -73,13 +114,13 @@ Widget RoomCard(String roomNum, String peopleNum, String price) {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.2),
-          spreadRadius: 1,
-          blurRadius: 10,
-          // offset: Offset(0, 3), // changes position of shadow
-        ),
-      ],
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 10,
+            // offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
       ),
       padding: EdgeInsets.fromLTRB(16, 4, 16, 4),
       child: Row(
@@ -155,21 +196,6 @@ Widget RoomCard(String roomNum, String peopleNum, String price) {
                   ),
                 ],
               ))
-
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text(
-          //       subtitle,
-          //       textAlign: TextAlign.center,
-          //       style: TextStyle(
-          //           fontSize: 15,
-          //           color: Colors.grey,
-          //           fontWeight: FontWeight.bold),
-          //     ),
-          //   ],
-          // )
         ],
       ),
     ),
