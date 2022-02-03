@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:roommanagement/layout/HomePage.dart';
+import 'package:roommanagement/layout/chart_page.dart';
+
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'element/card.dart';
+import 'layout/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,7 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
           toolbarHeight: 70,
           centerTitle: true,
         ),
-        body: const Homepage(),
+        body: IndexedStack(
+          index: _currentIndex,
+          children: const [Homepage(),chartpage()],
+        ),
+        
       
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,
