@@ -1,6 +1,6 @@
 {
-    "name": "group1",
-    "short_name": "group1",
+    "name": "roommanagement",
+    "short_name": "roommanagement",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

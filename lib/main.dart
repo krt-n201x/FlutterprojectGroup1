@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:group1/card.dart';
+import 'package:roommanagement/layout/HomePage.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:flutter/material.dart';
+
+import 'element/card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,10 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<String> getData() async {
-    String data = await rootBundle.loadString('assets/data.json');
-    return data;
-  }
+
 
   var _currentIndex = 0;
   @override
@@ -52,30 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
           toolbarHeight: 70,
           centerTitle: true,
         ),
-        body: Container(
-            padding: const EdgeInsets.all(15),
-            child: ScrollConfiguration(
-              behavior:
-                  ScrollConfiguration.of(context).copyWith(scrollbars: false),
-              child: FutureBuilder(
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    var data = json.decode(snapshot.data.toString());
-
-                    return ListView.builder(
-                      itemBuilder: (BuildContext context, int index) {
-                        return RoomCard(data[index]['roomNum'],
-                            data[index]['peopleNum'], data[index]['price']);
-                      },
-                      itemCount: data.length,
-                    );
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                },
-                future: getData(),
-              ),
-            )),
+        body: const Homepage(),
+      
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,
           onTap: (i) => setState(() => _currentIndex = i),
