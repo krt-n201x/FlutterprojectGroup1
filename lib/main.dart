@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:roommanagement/layout/chart_page.dart';
+import 'package:roommanagement/loadingpage.dart';
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Room management'),
+      home: const loadingpage(),
       debugShowCheckedModeBanner: false,
     );
   }
