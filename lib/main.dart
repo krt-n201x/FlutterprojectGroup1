@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'dart:ffi';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:roommanagement/element/CustomAppBar.dart';
 import 'package:roommanagement/layout/PageNotReady.dart';
 import 'package:roommanagement/layout/ChartPage.dart';
-
+import 'package:roommanagement/loadingpage.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:flutter/material.dart';
-
 import 'element/AppbarPainter.dart';
 import 'element/card.dart';
 import 'layout/HomePage.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Room management'),
+      home: loadingpage(),
       debugShowCheckedModeBanner: false,
     );
   }
