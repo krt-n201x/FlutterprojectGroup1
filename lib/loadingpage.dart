@@ -47,9 +47,10 @@ class _loadingpageState extends State<loadingpage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             Image.asset('assets/images/back.png',
+             Image.asset('assets/images/loading.jpg',
              fit: BoxFit.cover,
              width: MediaQuery.of(context).size.width,
+             
              )
             ],
           ),
