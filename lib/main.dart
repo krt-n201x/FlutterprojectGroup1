@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:roommanagement/element/CustomAppBar.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Room management',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: loadingpage(),
       debugShowCheckedModeBanner: false,
@@ -60,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           index: _currentIndex,
           children: const [
             Homepage(),
-            pagenotready(),
+            chartpage(),
             pagenotready(),
             pagenotready()
           ],
