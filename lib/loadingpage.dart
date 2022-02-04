@@ -11,7 +11,7 @@ class loadingpage extends StatefulWidget {
 }
 
 class _loadingpageState extends State<loadingpage> {
-  int currenttime = 10;
+  int currenttime = 5;
   late Timer t;
 
   @override

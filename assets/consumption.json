@@ -1,0 +1,37 @@
+[
+    {
+        "mount" : "Jan",
+        "water": "6487",
+        "electricity": "12354",
+        "internet": "6487",
+        "property" : "5478"
+    },
+    {
+        "mount" : "Feb",
+        "water": "4523",
+        "electricity": "25687",
+        "internet": "5874",
+        "property" : "3214"
+    },
+    {
+        "mount" : "Mar",
+        "water": "6523",
+        "electricity": "24531",
+        "internet": "1235",
+        "property" : "4521"
+    },
+    {
+        "mount" : "Apr",
+        "water": "4552",
+        "electricity": "15687",
+        "internet": "5463",
+        "property" : "2365"
+    },
+    {
+        "mount" : "May",
+        "water": "2435",
+        "electricity": "9875",
+        "internet": "4253",
+        "property" : "5689"
+    }
+]

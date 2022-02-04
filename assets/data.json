@@ -33,5 +33,25 @@
         "roomNum": "107",
         "peopleNum": "1",
         "price": "3,500"
+    },
+    {
+        "roomNum": "108",
+        "peopleNum": "1",
+        "price": "3,500"
+    },
+    {
+        "roomNum": "109",
+        "peopleNum": "1",
+        "price": "3,500"
+    },
+    {
+        "roomNum": "110",
+        "peopleNum": "1",
+        "price": "3,500"
+    },
+    {
+        "roomNum": "111",
+        "peopleNum": "1",
+        "price": "3,500"
     }
 ]

@@ -16,7 +16,7 @@ class Homepage extends StatelessWidget {
     }
 
     return Container(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
         child: ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: FutureBuilder(
