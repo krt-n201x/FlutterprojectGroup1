@@ -1,11 +1,13 @@
 import 'dart:convert';
-import 'package:flutter/services.dart';
-import 'package:roommanagement/layout/chart_page.dart';
-import 'package:roommanagement/loadingpage.dart';
-
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'dart:ffi';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
+import 'package:roommanagement/element/CustomAppBar.dart';
+import 'package:roommanagement/layout/PageNotReady.dart';
+import 'package:roommanagement/layout/ChartPage.dart';
+import 'package:roommanagement/loadingpage.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'element/AppbarPainter.dart';
 import 'element/card.dart';
 import 'layout/HomePage.dart';
 
@@ -38,28 +40,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 100.0,
           backgroundColor: Colors.deepPurple[400],
-          title: Text(widget.title,
-              style: const TextStyle(
-                fontSize: 32,
-              )),
-          toolbarHeight: 70,
+          elevation: 0.0,
+          title: const Text('ROOM MANAGEMENT',
+              style: TextStyle(
+                  fontSize: 32,
+                  fontFamily: 'WorkSans',
+                  fontWeight: FontWeight.w500)),
           centerTitle: true,
         ),
         body: IndexedStack(
           index: _currentIndex,
-          children: const [Homepage(),chartpage()],
+          children: const [
+            Homepage(),
+            pagenotready(),
+            pagenotready(),
+            pagenotready()
+          ],
         ),
-        
-      
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,
           onTap: (i) => setState(() => _currentIndex = i),
@@ -73,15 +78,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
             /// Likes
             SalomonBottomBarItem(
-              icon: const Icon(Icons.favorite_border),
-              title: const Text("Likes"),
+              icon: const Icon(Icons.insert_chart_outlined_rounded),
+              title: const Text("Consumption"),
               selectedColor: Colors.pink,
             ),
 
             /// Search
             SalomonBottomBarItem(
-              icon: const Icon(Icons.search),
-              title: const Text("Search"),
+              icon: const Icon(Icons.circle_notifications),
+              title: const Text("Notification"),
               selectedColor: Colors.orange,
             ),
 

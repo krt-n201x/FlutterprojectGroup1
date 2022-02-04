@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget RoomCard(String roomNum, String peopleNum, String price) {
   return Container(
-    margin: const EdgeInsets.only(top: 8),
+    margin: const EdgeInsets.only(top: 4),
     padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
     height: 91,
     child: Container(
